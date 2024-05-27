@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cassava Map Download</title>
+  </head>
+  <body>
+    <h1>Cassava Map Download</h1>
+    <form id="downloadForm">
+      <label for="year">Year:</label>
+      <input
+        type="number"
+        id="year"
+        name="year"
+        value="2023"
+        min="2023"
+        max="2025"
+      />
+      <br />
+      <label for="month">Month:</label>
+      <select id="month" name="month">
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <!-- Add more months here if needed -->
+      </select>
+      <br />
+      <label for="province">Province:</label>
+      <select id="province" name="province">
+        <!-- Add province options dynamically using JavaScript -->
+      </select>
+      <br />
+      <button type="submit">Download</button>
+    </form>
+
+    <div id="downloadLinks"></div>
+
+    <script>
+      document
+        .getElementById("downloadForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const year = document.getElementById("year").value;
+          const month = document.getElementById("month").value;
+          const province = document.getElementById("province").value;
+          const apiUrl = `https://drought-765rkyfg3q-as.a.run.app/get/cassava/map/pdf?year=${year}&month=${month}&province=${province}`;
+
+          fetch(apiUrl)
+            .then((response) => response.json())
+            .then((data) => {
+              const downloadLinks = document.getElementById("downloadLinks");
+              downloadLinks.innerHTML = ""; // Clear previous download links
+              data.data.file.forEach((file, index) => {
+                const link = document.createElement("a");
+                link.href = file;
+                link.textContent = `Download Map ${index + 1}`;
+                link.download = `Cassava_Map_${province}_${year}_${month}_${
+                  index + 1
+                }.pdf`;
+                downloadLinks.appendChild(link);
+                downloadLinks.appendChild(document.createElement("br"));
+              });
+            })
+            .catch((error) => {
+              console.error("Error fetching data:", error);
+            });
+        });
+
+      // Populate province dropdown options
+      const provinceSelect = document.getElementById("province");
+      fetch("https://drought-765rkyfg3q-as.a.run.app/get/province")
+        .then((response) => response.json())
+        .then((data) => {
+          data.data.forEach((province) => {
+            const option = document.createElement("option");
+            option.value = province.pv_code;
+            option.textContent = province.pv_tn;
+            provinceSelect.appendChild(option);
+          });
+        })
+        .catch((error) => {
+          console.error("Error fetching provinces:", error);
+        });
+    </script>
+  </body>
+</html>

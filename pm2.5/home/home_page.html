@@ -1,0 +1,1830 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <div class="banner">
+        <div class="navbar">
+          <img src="img/gistda-logo.png" class="logo" />
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Download</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content">
+        <h1>ระบบติดตาม PM2.5 จากเทคโนโลยีดาวเทียมและภูมิสารสนเทศ</h1>
+        <p>
+          ระบบติดตาม PM2.5
+          จากเทคโนโลยีดาวเทียมและภูมิสารสนเทศเป็นการใช้เทคโนโลยีดาวเทียมและภูมิสารสนเทศในการตรวจสอบระดับฝุ่น
+          PM2.5 ในบริเวณต่างๆ <br />
+          โดยอาจใช้ข้อมูลจากดาวเทียมสำรวจภูมิศาสตร์และข้อมูลสภาพอากาศ
+          เพื่อช่วยในการตรวจวัดและจัดการกับปัญหามลพิษทางอากาศในพื้นที่ต่าง ๆ
+          อย่างมีประสิทธิภาพและรวดเร็ว
+        </p>
+        <img src="img/logo.png" />
+
+        <div>
+          <button type="button"><span></span>ติดตั้ง"เช็คฝุ่น"</button>
+          <button type="button" onclick="document.location='#status'">
+            <span></span>เช็คฝุ่นตอนนี้
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <h3 class="i-name" id="status">สถานะฝุ่นในประเทศไทย</h3>
+
+    <div class="values">
+      <div class="val-box">
+        <i class="fa-solid fa-face-grin-beam"></i>
+        <div>
+          <h3>ดีมาก</h3>
+          <p>0-15.0 µg/m³</p>
+        </div>
+      </div>
+
+      <div class="val-box">
+        <i class="fa-solid fa-face-grin"></i>
+        <div>
+          <h3>ดี</h3>
+          <p>15.1-25.0 µg/m³</p>
+        </div>
+      </div>
+
+      <div class="val-box">
+        <i class="fa-solid fa-face-flushed"></i>
+        <div>
+          <h3>ปานกลาง</h3>
+          <p>25.1-37.5 µg/m³</p>
+        </div>
+      </div>
+
+      <div class="val-box">
+        <i class="fa-solid fa-face-frown"></i>
+        <div>
+          <h3>เริ่มมีผลต่อสุขภาพ</h3>
+          <p>37.6-75.0 µg/m³</p>
+        </div>
+      </div>
+
+      <div class="val-box">
+        <i class="fa-solid fa-face-dizzy"></i>
+        <div>
+          <h3>มีผลต่อสุขภาพ</h3>
+          <p>> 75.1 µg/m³</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="table_list">
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7961853.064291536!2d96.19127779267184!3d12.995911718944306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304d8df747424db1%3A0x9ed72c880757e802!2sThailand!5e0!3m2!1sen!2sth!4v1709745251660!5m2!1sen!2sth"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      <main class="table">
+        <section class="table_header">
+          <h1>ระดับ PM2.5 ล่าสุดในแต่ละจังหวัด</h1>
+        </section>
+        <section class="table_body">
+          <table>
+            <thead>
+              <tr>
+                <th>ลำดับ</th>
+                <th>จังหวัด</th>
+                <th>ชั่วโมงล่าสุด (µg/m³)</th>
+                <th>คาดการณ์ ณ เวลา 14:00 น. 15:00 | 16:00 | 17:00</th>
+                <th>เฉลี่ย 24 ชั่วโมง (µg/m³)</th>
+                <th>รายอำเภอ</th>
+                <th>ข้อมูลกราฟ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>แพร่</td>
+                <td>
+                  <p class="status red">155.2</p>
+                </td>
+                <td>
+                  <p class="status red">139.5</p>
+                  <p class="status red">133.3</p>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td>ลำปาง</td>
+                <td>
+                  <p class="status red">155.2</p>
+                </td>
+                <td>
+                  <p class="status red">139.5</p>
+                  <p class="status red">133.3</p>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+                <td>ลำพูน</td>
+                <td>
+                  <p class="status red">155.2</p>
+                </td>
+                <td>
+                  <p class="status red">139.5</p>
+                  <p class="status red">133.3</p>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+                <td>เชียงใหม่</td>
+                <td>
+                  <p class="status red">155.2</p>
+                </td>
+                <td>
+                  <p class="status red">139.5</p>
+                  <p class="status red">133.3</p>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>5</td>
+                <td>น่าน</td>
+                <td>
+                  <p class="status red">155.2</p>
+                </td>
+                <td>
+                  <p class="status red">139.5</p>
+                  <p class="status red">133.3</p>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+                <td>แม่ฮ่องสอน</td>
+                <td>
+                  <p class="status red">155.2</p>
+                </td>
+                <td>
+                  <p class="status red">139.5</p>
+                  <p class="status red">133.3</p>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+                <td>สุโขทัย</td>
+                <td>
+                  <p class="status red">155.2</p>
+                </td>
+                <td>
+                  <p class="status red">139.5</p>
+                  <p class="status red">133.3</p>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>8</td>
+                <td>อุตรดิตถ์</td>
+                <td>
+                  <p class="status red">155.2</p>
+                </td>
+                <td>
+                  <p class="status red">139.5</p>
+                  <p class="status red">133.3</p>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>9</td>
+                <td>เลย</td>
+                <td>
+                  <p class="status red">155.2</p>
+                </td>
+                <td>
+                  <p class="status red">139.5</p>
+                  <p class="status red">133.3</p>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>10</td>
+                <td>พะเยา</td>
+                <td>
+                  <p class="status red">155.2</p>
+                </td>
+                <td>
+                  <p class="status red">139.5</p>
+                  <p class="status red">133.3</p>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>11</td>
+                <td>ตาก</td>
+                <td>
+                  <p class="status red">155.2</p>
+                </td>
+                <td>
+                  <p class="status red">139.5</p>
+                  <p class="status red">133.3</p>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>12</td>
+                <td>เชียงราย</td>
+                <td>
+                  <p class="status red">155.2</p>
+                </td>
+                <td>
+                  <p class="status red">139.5</p>
+                  <p class="status red">133.3</p>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>13</td>
+                <td>นครพนม</td>
+                <td>
+                  <p class="status red">155.2</p>
+                </td>
+                <td>
+                  <p class="status red">139.5</p>
+                  <p class="status red">133.3</p>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>หนองคาย</td>
+                <td>
+                  <p class="status red">155.2</p>
+                </td>
+                <td>
+                  <p class="status red">139.5</p>
+                  <p class="status red">133.3</p>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>15</td>
+                <td>พิษณุโลก</td>
+                <td>
+                  <p class="status red">155.2</p>
+                </td>
+                <td>
+                  <p class="status red">139.5</p>
+                  <p class="status red">133.3</p>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <p class="status red">116.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>16</td>
+                <td>อุดรธานี</td>
+                <td>
+                  <p class="status red">76.3</p>
+                </td>
+                <td>
+                  <p class="status orange">74.1</p>
+                  <p class="status orange">72.4</p>
+                  <p class="status orange">71.0</p>
+                </td>
+                <td>
+                  <p class="status orange">74.8</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>17</td>
+                <td>หนองบัวลำภู</td>
+                <td>
+                  <p class="status orange">74.3</p>
+                </td>
+                <td>
+                  <p class="status orange">72.1</p>
+                  <p class="status orange">69.8</p>
+                  <p class="status orange">67.9</p>
+                </td>
+                <td>
+                  <p class="status orange">73.8</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>18</td>
+                <td>บึงกาฬ</td>
+                <td>
+                  <p class="status orange">70.5</p>
+                </td>
+                <td>
+                  <p class="status orange">67.7</p>
+                  <p class="status orange">66.3</p>
+                  <p class="status orange">64.9</p>
+                </td>
+                <td>
+                  <p class="status orange">66.5</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>19</td>
+                <td>กำแพงเพชร</td>
+                <td>
+                  <p class="status orange">67.7</p>
+                </td>
+                <td>
+                  <p class="status orange">69.7</p>
+                  <p class="status orange">67.1</p>
+                  <p class="status orange">64.9</p>
+                </td>
+                <td>
+                  <p class="status orange">63.4</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>20</td>
+                <td>สกลนคร</td>
+                <td>
+                  <p class="status orange">64.8</p>
+                </td>
+                <td>
+                  <p class="status orange">61.1</p>
+                  <p class="status orange">60.0</p>
+                  <p class="status orange">58.9</p>
+                </td>
+                <td>
+                  <p class="status orange">70.6</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>21</td>
+                <td>เพชรบูรณ์</td>
+                <td>
+                  <p class="status orange">57.6</p>
+                </td>
+                <td>
+                  <p class="status orange">57.9</p>
+                  <p class="status orange">57.1</p>
+                  <p class="status orange">56.3</p>
+                </td>
+                <td>
+                  <p class="status orange">54.6</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>22</td>
+                <td>ขอนแก่น</td>
+                <td>
+                  <p class="status orange">57.1</p>
+                </td>
+                <td>
+                  <p class="status orange">55.7</p>
+                  <p class="status orange">55.1</p>
+                  <p class="status orange">54.5</p>
+                </td>
+                <td>
+                  <p class="status orange">58.7</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>23</td>
+                <td>ชัยภูมิ</td>
+                <td>
+                  <p class="status orange">54.4</p>
+                </td>
+                <td>
+                  <p class="status orange">49.2</p>
+                  <p class="status orange">49.2</p>
+                  <p class="status orange">49.1</p>
+                </td>
+                <td>
+                  <p class="status orange">50.8</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>24</td>
+                <td>กาฬสินธุ์</td>
+                <td>
+                  <p class="status orange">53.6</p>
+                </td>
+                <td>
+                  <p class="status orange">52.7</p>
+                  <p class="status orange">52.7</p>
+                  <p class="status orange">52.7</p>
+                </td>
+                <td>
+                  <p class="status orange">64.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>25</td>
+                <td>อุทัยธานี</td>
+                <td>
+                  <p class="status orange">51.7</p>
+                </td>
+                <td>
+                  <p class="status orange">50.3</p>
+                  <p class="status orange">49.1</p>
+                  <p class="status orange">48.1</p>
+                </td>
+                <td>
+                  <p class="status orange">47.0</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <but><i class="fa-solid fa-chart-simple"></i></but>
+                </td>
+              </tr>
+
+              <tr>
+                <td>26</td>
+                <td>พิจิตร</td>
+                <td>
+                  <p class="status orange">50.5</p>
+                </td>
+                <td>
+                  <p class="status orange">51.4</p>
+                  <p class="status orange">50.9</p>
+                  <p class="status orange">50.4</p>
+                </td>
+                <td>
+                  <p class="status orange">52.2</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>27</td>
+                <td>ชัยนาท</td>
+                <td>
+                  <p class="status orange">49.9</p>
+                </td>
+                <td>
+                  <p class="status orange">48.9</p>
+                  <p class="status orange">47.4</p>
+                  <p class="status orange">46.3</p>
+                </td>
+                <td>
+                  <p class="status orange">43.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>28</td>
+                <td>กาญจนบุรี</td>
+                <td>
+                  <p class="status orange">49.9</p>
+                </td>
+                <td>
+                  <p class="status orange">48.5</p>
+                  <p class="status orange">46.1</p>
+                  <p class="status orange">44.4</p>
+                </td>
+                <td>
+                  <p class="status orange">39.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>29</td>
+                <td>นครสวรรค์</td>
+                <td>
+                  <p class="status orange">48.7</p>
+                </td>
+                <td>
+                  <p class="status orange">48.0</p>
+                  <p class="status orange">47.3</p>
+                  <p class="status orange">46.7</p>
+                </td>
+                <td>
+                  <p class="status orange">48.0</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>30</td>
+                <td>มุกดาหาร</td>
+                <td>
+                  <p class="status orange">48.6</p>
+                </td>
+                <td>
+                  <p class="status orange">51.2</p>
+                  <p class="status orange">51.0</p>
+                  <p class="status orange">50.8</p>
+                </td>
+                <td>
+                  <p class="status orange">68.8</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>31</td>
+                <td>มหาสารคาม</td>
+                <td>
+                  <p class="status orange">47.0</p>
+                </td>
+                <td>
+                  <p class="status orange">47.4</p>
+                  <p class="status orange">47.4</p>
+                  <p class="status orange">47.5</p>
+                </td>
+                <td>
+                  <p class="status orange">52.9</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>32</td>
+                <td>สิงห์บุรี</td>
+                <td>
+                  <p class="status orange">47.0</p>
+                </td>
+                <td>
+                  <p class="status orange">47.3</p>
+                  <p class="status orange">45.0</p>
+                  <p class="status orange">43.2</p>
+                </td>
+                <td>
+                  <p class="status yellow">33.7</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>33</td>
+                <td>สุพรรณบุรี</td>
+                <td>
+                  <p class="status orange">45.5</p>
+                </td>
+                <td>
+                  <p class="status orange">44.4</p>
+                  <p class="status orange">41.7</p>
+                  <p class="status orange">39.7</p>
+                </td>
+                <td>
+                  <p class="status yellow">31.7</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>34</td>
+                <td>ลพบุรี</td>
+                <td>
+                  <p class="status orange">41.1</p>
+                </td>
+                <td>
+                  <p class="status orange">41.3</p>
+                  <p class="status orange">41.0</p>
+                  <p class="status orange">40.6</p>
+                </td>
+                <td>
+                  <p class="status yellow">36.9</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>35</td>
+                <td>อ่างทอง</td>
+                <td>
+                  <p class="status orange">41.1</p>
+                </td>
+                <td>
+                  <p class="status orange">41.3</p>
+                  <p class="status orange">39.4</p>
+                  <p class="status orange">38.0</p>
+                </td>
+                <td>
+                  <p class="status yellow">32.3</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>36</td>
+                <td>นครราชสีมา</td>
+                <td>
+                  <p class="status orange">40.9</p>
+                </td>
+                <td>
+                  <p class="status orange">40.4</p>
+                  <p class="status orange">40.8</p>
+                  <p class="status orange">41.1</p>
+                </td>
+                <td>
+                  <p class="status orange">40.4</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>37</td>
+                <td>ร้อยเอ็ด</td>
+                <td>
+                  <p class="status orange">39.5</p>
+                </td>
+                <td>
+                  <p class="status orange">41.5</p>
+                  <p class="status orange">41.9</p>
+                  <p class="status orange">42.2</p>
+                </td>
+                <td>
+                  <p class="status orange">50.7</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>38</td>
+                <td>ยโสธร</td>
+                <td>
+                  <p class="status orange">39.0</p>
+                </td>
+                <td>
+                  <p class="status orange">41.8</p>
+                  <p class="status orange">42.1</p>
+                  <p class="status orange">42.4</p>
+                </td>
+                <td>
+                  <p class="status orange">57.8</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>39</td>
+                <td>อำนาจเจริญ</td>
+                <td>
+                  <p class="status orange">38.2</p>
+                </td>
+                <td>
+                  <p class="status orange">42.7</p>
+                  <p class="status orange">42.8</p>
+                  <p class="status orange">42.9</p>
+                </td>
+                <td>
+                  <p class="status orange">62.3</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>40</td>
+                <td>บุรีรัมย์</td>
+                <td>
+                  <p class="status orange">37.9</p>
+                </td>
+                <td>
+                  <p class="status orange">39.0</p>
+                  <p class="status orange">39.4</p>
+                  <p class="status orange">39.7</p>
+                </td>
+                <td>
+                  <p class="status orange">39.2</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>41</td>
+                <td>อุบลราชธานี</td>
+                <td>
+                  <p class="status yellow">36.6</p>
+                </td>
+                <td>
+                  <p class="status yellow">37.5</p>
+                  <p class="status orange">38.0</p>
+                  <p class="status orange">38.4</p>
+                </td>
+                <td>
+                  <p class="status orange">51.9</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>42</td>
+                <td>สระบุรี</td>
+                <td>
+                  <p class="status yellow">35.7</p>
+                </td>
+                <td>
+                  <p class="status yellow">36.0</p>
+                  <p class="status yellow">36.5</p>
+                  <p class="status yellow">36.5</p>
+                </td>
+                <td>
+                  <p class="status yellow">31.7</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>43</td>
+                <td>ราชบุรี</td>
+                <td>
+                  <p class="status yellow">35.3</p>
+                </td>
+                <td>
+                  <p class="status yellow">33.7</p>
+                  <p class="status yellow">31.9</p>
+                  <p class="status yellow">30.6</p>
+                </td>
+                <td>
+                  <p class="status yellow">27.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>44</td>
+                <td>สุรินทร์</td>
+                <td>
+                  <p class="status yellow">35.3</p>
+                </td>
+                <td>
+                  <p class="status yellow">37.4</p>
+                  <p class="status orange">38.2</p>
+                  <p class="status orange">39.0</p>
+                </td>
+                <td>
+                  <p class="status orange">42.0</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>45</td>
+                <td>ตรัง</td>
+                <td>
+                  <p class="status yellow">33.1</p>
+                </td>
+                <td>
+                  <p class="status yellow">32.7</p>
+                  <p class="status yellow">32.2</p>
+                  <p class="status yellow">31.9</p>
+                </td>
+                <td>
+                  <p class="status yellow">26.9</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>46</td>
+                <td>พัทลุง</td>
+                <td>
+                  <p class="status yellow">33.0</p>
+                </td>
+                <td>
+                  <p class="status yellow">32.6</p>
+                  <p class="status yellow">32.2</p>
+                  <p class="status yellow">31.9</p>
+                </td>
+                <td>
+                  <p class="status green">24.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>47</td>
+                <td>ยะลา</td>
+                <td>
+                  <p class="status yellow">33.0</p>
+                </td>
+                <td>
+                  <p class="status yellow">32.7</p>
+                  <p class="status yellow">32.3</p>
+                  <p class="status yellow">31.9</p>
+                </td>
+                <td>
+                  <p class="status yellow">29.7</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>48</td>
+                <td>นราธิวาส</td>
+                <td>
+                  <p class="status yellow">33.0</p>
+                </td>
+                <td>
+                  <p class="status yellow">32.6</p>
+                  <p class="status yellow">32.2</p>
+                  <p class="status yellow">32.0</p>
+                </td>
+                <td>
+                  <p class="status yellow">29.5</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>49</td>
+                <td>ปัตตานี</td>
+                <td>
+                  <p class="status yellow">32.9</p>
+                </td>
+                <td>
+                  <p class="status yellow">32.7</p>
+                  <p class="status yellow">32.2</p>
+                  <p class="status yellow">31.9</p>
+                </td>
+                <td>
+                  <p class="status yellow">29.9</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>50</td>
+                <td>สงขลา</td>
+                <td>
+                  <p class="status yellow">32.9</p>
+                </td>
+                <td>
+                  <p class="status yellow">32.6</p>
+                  <p class="status yellow">32.2</p>
+                  <p class="status yellow">31.9</p>
+                </td>
+                <td>
+                  <p class="status yellow">25.5</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>51</td>
+                <td>นครปฐม</td>
+                <td>
+                  <p class="status yellow">32.6</p>
+                </td>
+                <td>
+                  <p class="status yellow">30.1</p>
+                  <p class="status yellow">27.4</p>
+                  <p class="status yellow">25.8</p>
+                </td>
+                <td>
+                  <p class="status green">23.5</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>52</td>
+                <td>ศรีสะเกษ</td>
+                <td>
+                  <p class="status yellow">31.8</p>
+                </td>
+                <td>
+                  <p class="status yellow">33.6</p>
+                  <p class="status yellow">34.4</p>
+                  <p class="status yellow">35.2</p>
+                </td>
+                <td>
+                  <p class="status yellow">43.7</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>53</td>
+                <td>พระนครศรีอยุธยา</td>
+                <td>
+                  <p class="status yellow">30.1</p>
+                </td>
+                <td>
+                  <p class="status yellow">30.8</p>
+                  <p class="status yellow">30.2</p>
+                  <p class="status yellow">29.7</p>
+                </td>
+                <td>
+                  <p class="status green">25.0</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>54</td>
+                <td>ปราจีนบุรี</td>
+                <td>
+                  <p class="status yellow">30.1</p>
+                </td>
+                <td>
+                  <p class="status yellow">33.9</p>
+                  <p class="status yellow">34.5</p>
+                  <p class="status yellow">34.7</p>
+                </td>
+                <td>
+                  <p class="status yellow">30.4</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>55</td>
+                <td>นครศรีธรรมราช</td>
+                <td>
+                  <p class="status yellow">29.4</p>
+                </td>
+                <td>
+                  <p class="status yellow">27.6</p>
+                  <p class="status yellow">27.0</p>
+                  <p class="status yellow">26.0</p>
+                </td>
+                <td>
+                  <p class="status green">23.8</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>56</td>
+                <td>สตูล</td>
+                <td>
+                  <p class="status yellow">27.1</p>
+                </td>
+                <td>
+                  <p class="status yellow">28.6</p>
+                  <p class="status yellow">27.9</p>
+                  <p class="status yellow">26.5</p>
+                </td>
+                <td>
+                  <p>24.0</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>57</td>
+                <td>ประจวบคีรีขันธ์</td>
+                <td>
+                  <p class="status yellow">25.9</p>
+                </td>
+                <td>
+                  <p class="status yellow">27.0</p>
+                  <p class="status yellow">26.7</p>
+                  <p class="status yellow">26.5</p>
+                </td>
+                <td>
+                  <p class="status green">23.6</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>58</td>
+                <td>นครนายก</td>
+                <td>
+                  <p class="status yellow">25.2</p>
+                </td>
+                <td>
+                  <p class="status yellow">27.9</p>
+                  <p class="status yellow">28.2</p>
+                  <p class="status yellow">28.4</p>
+                </td>
+                <td>
+                  <p class="status green">24.8</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>59</td>
+                <td>สระแก้ว</td>
+                <td>
+                  <p class="status yellow">25.1</p>
+                </td>
+                <td>
+                  <p class="status yellow">27.9</p>
+                  <p class="status yellow">28.9</p>
+                  <p class="status yellow">29.7</p>
+                </td>
+                <td>
+                  <p class="status yellow">28.0</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>60</td>
+                <td>เพชรบุรี</td>
+                <td>
+                  <p class="status yellow">25.1</p>
+                </td>
+                <td>
+                  <p class="status yellow">26.7</p>
+                  <p class="status yellow">26.5</p>
+                  <p class="status yellow">26.3</p>
+                </td>
+                <td>
+                  <p class="status green">23.8</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>61</td>
+                <td>ปทุมธานี</td>
+                <td>
+                  <p class="status green">24.7</p>
+                </td>
+                <td>
+                  <p class="status yellow">26.0</p>
+                  <p class="status yellow">25.4</p>
+                  <p class="status green">24.9</p>
+                </td>
+                <td>
+                  <p class="status green">19.8</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>62</td>
+                <td>ระนอง</td>
+                <td>
+                  <p class="status green">24.5</p>
+                </td>
+                <td>
+                  <p class="status green">23.9</p>
+                  <p class="status green">23.4</p>
+                  <p class="status green">22.2</p>
+                </td>
+                <td>
+                  <p class="status green">22.8</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>63</td>
+                <td>กระบี่</td>
+                <td>
+                  <p class="status green">23.1</p>
+                </td>
+                <td>
+                  <p class="status green">23.5</p>
+                  <p class="status green">23.2</p>
+                  <p class="status green">22.5</p>
+                </td>
+                <td>
+                  <p class="status green">21.5</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>64</td>
+                <td>ภูเก็ต</td>
+                <td>
+                  <p class="status green">23.0</p>
+                </td>
+                <td>
+                  <p class="status green">26.1</p>
+                  <p class="status green">25.8</p>
+                  <p class="status green">25.6</p>
+                </td>
+                <td>
+                  <p class="status green">24.8</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>65</td>
+                <td>ฉะเชิงเทรา</td>
+                <td>
+                  <p class="status green">23.0</p>
+                </td>
+                <td>
+                  <p class="status green">24.6</p>
+                  <p class="status green">24.8</p>
+                  <p class="status green">25.0</p>
+                </td>
+                <td>
+                  <p class="status green">22.3</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>66</td>
+                <td>พังงา</td>
+                <td>
+                  <p class="status green">22.7</p>
+                </td>
+                <td>
+                  <p class="status green">24.1</p>
+                  <p class="status green">23.9</p>
+                  <p class="status green">23.7</p>
+                </td>
+                <td>
+                  <p class="status green">23.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>67</td>
+                <td>ตราด</td>
+                <td>
+                  <p class="status green">22.7</p>
+                </td>
+                <td>
+                  <p class="status green">24.0</p>
+                  <p class="status green">24.3</p>
+                  <p class="status green">24.5</p>
+                </td>
+                <td>
+                  <p class="status green">20.6</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>68</td>
+                <td>นนทบุรี</td>
+                <td>
+                  <p class="status green">20.2</p>
+                </td>
+                <td>
+                  <p class="status green">21.7</p>
+                  <p class="status green">21.3</p>
+                  <p class="status green">21.0</p>
+                </td>
+                <td>
+                  <p class="status green">18.3</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>69</td>
+                <td>สุราษฎร์ธานี</td>
+                <td>
+                  <p class="status green">20.2</p>
+                </td>
+                <td>
+                  <p class="status green">23.5</p>
+                  <p class="status green">22.7</p>
+                  <p class="status green">21.7</p>
+                </td>
+                <td>
+                  <p class="status green">22.4</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>70</td>
+                <td>จันทบุรี</td>
+                <td>
+                  <p class="status green">20.1</p>
+                </td>
+                <td>
+                  <p class="status green">21.4</p>
+                  <p class="status green">22.1</p>
+                  <p class="status green">22.5</p>
+                </td>
+                <td>
+                  <p class="status green">19.9</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>71</td>
+                <td>สมุทรสงคราม</td>
+                <td>
+                  <p class="status green">18.8</p>
+                </td>
+                <td>
+                  <p class="status green">18.9</p>
+                  <p class="status green">19.9</p>
+                  <p class="status green">20.7</p>
+                </td>
+                <td>
+                  <p class="status green">19.4</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>72</td>
+                <td>สมุทรสาคร</td>
+                <td>
+                  <p class="status green">16.9</p>
+                </td>
+                <td>
+                  <p class="status green">17.3</p>
+                  <p class="status green">18.6</p>
+                  <p class="status green">19.7</p>
+                </td>
+                <td>
+                  <p class="status green">16.8</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>73</td>
+                <td>ระยอง</td>
+                <td>
+                  <p class="status green">16.5</p>
+                </td>
+                <td>
+                  <p class="status green">17.9</p>
+                  <p class="status green">18.3</p>
+                  <p class="status green">19.1</p>
+                </td>
+                <td>
+                  <p class="status green">16.5</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>74</td>
+                <td>สมุทรปราการ</td>
+                <td>
+                  <p class="status green">16.2</p>
+                </td>
+                <td>
+                  <p class="status green">16.9</p>
+                  <p class="status green">18.3</p>
+                  <p class="status green">20.0</p>
+                </td>
+                <td>
+                  <p class="status green">16.4</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>75</td>
+                <td>สุรินทร์</td>
+                <td>
+                  <p class="status yellow">35.3</p>
+                </td>
+                <td>
+                  <p class="status yellow">37.4</p>
+                  <p class="status orange">38.2</p>
+                  <p class="status orange">39.0</p>
+                </td>
+                <td>
+                  <p class="status orange">42.0</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>76</td>
+                <td>ตรัง</td>
+                <td>
+                  <p class="status yellow">33.1</p>
+                </td>
+                <td>
+                  <p class="status yellow">32.7</p>
+                  <p class="status yellow">32.2</p>
+                  <p class="status yellow">31.9</p>
+                </td>
+                <td>
+                  <p class="status yellow">26.9</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>77</td>
+                <td>พัทลุง</td>
+                <td>
+                  <p class="status yellow">33.0</p>
+                </td>
+                <td>
+                  <p class="status yellow">32.6</p>
+                  <p class="status yellow">32.2</p>
+                  <p class="status yellow">31.9</p>
+                </td>
+                <td>
+                  <p class="status green">24.1</p>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-list"></i></button>
+                </td>
+                <td>
+                  <button><i class="fa-solid fa-chart-simple"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </section>
+  </body>
+</html>
